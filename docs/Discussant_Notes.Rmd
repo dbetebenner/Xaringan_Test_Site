@@ -75,11 +75,15 @@ magick::image_read_pdf("Figures/github_repo_schoolgrowth.pdf")
 
 --
 
-- Results clearly show the superior of EBLP over the simple average except in a few circumstances.
+- Results clearly show the superior of EBLP over the simple average except in a few circumstances (e.g. some large districts).
 
 --
 
-- I found the fact that the approach does not involve shrinkage but improves accuracy to be somewhat counter-intuitive
+- Huge benefits in terms of accuracy and precistion for small groups (e.g., schools)
+
+--
+
+- I found the fact that the approach does not involve shrinkage but improves accuracy to be somewhat counter-intuitive.
 
 --
 
@@ -103,6 +107,10 @@ magick::image_read_pdf("Figures/github_repo_schoolgrowth.pdf")
 
 - The Decision Points that were laid out at the end of the presentation are well stated and highly practical
 
+--
+
+- To what extent does pooling results across years influence stability versus EBLP?
+
 ---
 
 # Presentation 3:
@@ -111,7 +119,7 @@ magick::image_read_pdf("Figures/github_repo_schoolgrowth.pdf")
 
 --
 
-- Great to see California moving forward (finally) to having student growth.
+- Great to see California moving forward to having student growth. Better late than never.
 
 --
 
