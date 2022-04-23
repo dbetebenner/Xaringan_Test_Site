@@ -1,1 +1,2 @@
-# Discussion Presentation for NCME 2022
+## Discussion of Improving the Accuracy of Aggregate Growth Measures: Statistical Methods and
+Practical Challenges

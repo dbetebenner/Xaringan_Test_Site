@@ -1,10 +1,9 @@
 ---
-title: "Connecting COVID-19 Policy to Practice in Indiana using State Assessment Data"
-subtitle: "Conceptualization, Results, and Implementation"
-author:
-    - Damian Betebenner, Center for Assessment
-    - Charity Flores, Indiana Department of Education
-date: "April 10th, 2022 (updated: `r toOrdinal::toOrdinalDate(Sys.Date())`)"
+title: "Improving the Accuracy of Aggregate Growth Measures: Statistical Methods and Practical Challenges"
+subtitle: "Discussion of Presentations"
+author: "Damian Betebenner"
+institute: "Center for Assessment"
+date: "April 17th, 2022 (updated: `r toOrdinal::toOrdinalDate(Sys.Date())`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +14,6 @@ output:
       titleSlideClass: ["center", "middle", "my-title"]
 
 ---
-class: inverse, center, middle
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -51,434 +49,111 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_clipboard()
 ```
 
-# Connecting COVID-19 Policy to Practice in Indiana using State Assessment Data
-
----
-
-# Coordinated Session on COVID-19 Academic Impact in Indiana
+# Empirical Best Linear Prediction
 
 --
 
-## The Presenters
-
-- [Damian Betebenner](https://github.com/dbetebenner), Senior Associate, Center for Assessment
-
-- [Charity Flores](https://github.com/ndadey), Chief Academic Officer, Indiana Department of Education
+- An excellent set of presentations/paper.
 
 --
 
-## In Absentia Presenters
-
-- [Maggie Paino](https://github.com/adamviAdam), Director of Accountability, Indiana Department of Education
-
-- [Adam VanIwaarden](https://github.com/adamviAdam), Center for Assessment
-
----
-
-# Schedule
+- A major contribution to the way in which states and other organizations should consider aggregating individual growth scores.
 
 --
 
-1. Legislation as the lever to marshal state assessment resources
-
---
-
-2. Combining data and analytics to understand the academic impact of the pandemic
-
---
-
-3. Turning data into academic impact data into actions
-
---
-
-4. Changing conversations about education assessment data: Support and learning acceleration
-
----
-class: inverse, center, middle
-
-# Combining data and analytics to understand the academic impact of the pandemic
-
----
-# Conceptualizing Academic Impact
-
---
-
-### The pandemic and all the ensuing disruptions functioned/functions as an “academic headwind”, impeding (in general) the academic progress of students.
-
---
-
-### Headwinds impede progress in two ways:
-
---
-
-1. They slow one’s rate of progress (speedometer)
-
---
-
-2. And by slowing one’s rate of progress they lead to less distance being travelled (odometer).
-
---
-
-### In education these two impediments manifest as:
-
---
-
-1. Decrease in student growth (i.e. deceleration).
-
---
-
-2. Decrease in student attainment.
-
----
-
-# Learning Deceleration/Acceleration
-
---
-
-- Summarization of assessment data (either for diagnostic or accountability purposes) emphasizes two types of data results: Status (i.e. student attainment) and Growth (i.e., student academic progress)
-
---
-
-- With the pandemic, emaphasis has changed to look at _academic impact_
-
---
-
-- We emphasize that Impact is synonymous with _decleration_ and Recovery is synonymous with _acceleration_
-
---
-
-- Deceleration, by definition, is the change in velocity (i.e. growth)
-
---
-
-- Improvement (increasing student attainment/status in a system over time) is indicative of acceleration (unless the population is changing leading to the increased attainment/status)
-
---
-
-- One of the most informative and least appreciated papers that discusses this is [Focusing State Educational Accountability Systems: Four Methods of Judging School Quality and Progress](https://www.nciea.org/sites/default/files/publications/Dale020402.pdf)
-
----
-class: center, middle
+- I commend the authors for creating a GitHub based R package ([schoolgrowth](https://github.com/jrlockwood/schoolgrowth)) with the non-trivial analytics.
 
 ```{r echo=FALSE}
-magick::image_read_pdf("Figures/Carlson_Four_Quadrant_Figure.pdf")
+magick::image_read_pdf("Figures/github_repo_schoolgrowth.pdf")
 ```
 
 ---
 
-# COVID-19 Academic Impact
+# Presentation 1:
+
+## Improving Accuracy and Stability of Aggregate Student Growth Measures Using Empirical Best Linear Prediction
 
 --
 
-### Discussion of academic impact requires the consideration of a counterfactual:
+- Results clearly show the superior of EBLP over the simple average except in a few circumstances.
 
 --
 
-- Where would student(s) have been had the pandemic not occurred?
+- I found the fact that the approach does not involve shrinkage but improves accuracy to be somewhat counter-intuitive
 
 --
 
-### The impact to student attainment and student growth frame the two primary types of analyses that will be discussed
-
---
-
-1. Academic Impact as it relates to change (i.e. decrease) in student attainment
-
---
-
-2. Academic Impact as it relates to change (i.e., decrease) in student growth
-
---
+- A feature of the EBLP approach that "makes it work" are the "patterns" described in the paper. Could you elaborate on exactly how patterns are defined.
 
 ---
 
-# Data for Analyses
+# Presentation 2:
+
+## Applications of the Empirical Best Linear Prediction to Aggregate Growth Measures in Two States
 
 --
 
-### Indiana drew upon three sets of large scale assessment data to investigate academic impact
+- Excellent stress test of the approach using real data
 
 --
 
-- ILEARN state assessment data given in grade 3 to 8 in ELA and Mathematics (approximately 80,000 students per grade and content area)
+- Comparison showing increasing stability including additional subjects and lag scores was compelling
 
 --
 
-- WIDA-ACCESS English Language Proficiency assessment data given in grades K to 12 (ranging from approximately 8,000 to 2,000 students depending upon grade)
-
---
-
-- Intermim assessment data submitted by districts to the states (primarily NWEA-MAP, Curriculum Associates IREADY)
-
-
-## We discuss results from ILEARN and WIDA-ACCESS analyses today.
+- The Decision Points that were laid out at the end of the presentation are well stated and highly practical
 
 ---
 
-# Academic Impact Validity Threats
+# Presentation 3:
+
+## Adopting a Growth Measure in California
 
 --
 
-## Academic impact analyses for a state assume data are representative and valid
+- Great to see California moving forward (finally) to having student growth.
 
 --
 
-- Student particition: Participation in Indiana was close to normal with > 95 percent participation in large scale state assessments.
-- Multiple imputation analyses were conducted to investigate impact associated with any missing data.
-- Pandemic impact on student test-taking motivation.
-- No evidence of differential test-taking motivation pre-pandemic to pandemic.
+- Their journey is illustrative of the numerous pitfalls that can accompany assessment and accountability initiatives.
+
+--
+
+- I'm curious. You mention in 2018 during your review that the growth model did not "Provide the answers/information that our various educational partners wanted". What answers/information did the partners want.
 
 
 
 ---
 
-# Status based analyses of academic impact
-
-
---
-
-- Changes in status (i.e. attainment) compare the status of a pre-pandemic group of students with a comparable group of students in during/after the pandemic.
+# Overall Comments
 
 --
 
-- For example states made comparisons of same grade/same content area performance from 2019 to 2021 (e.g., Grade 5 mathematics in 2019 with Grade 5 mathematics in 2021)
+- Growth aggregation methods:
 
 --
 
-- The most common metric used to communicate change in status is change in percent proficient
+	- Started with median
 
 --
 
-- Though not "wrong", decreases in percent proficient (or percent above/below any threshold) is not the best measure of central tendency.
+	- Percentage of observations above some threshold
 
 --
 
-- One can also calculate change in mean scale score (standardized, to create an effect size)
-
-
----
-
-# Status based analyses of academic impact
+	- Mean
 
 --
 
-- To refine status based measure of change, we calculate the distributional shift associated with pre-pandemic and pandemic score.
+	- EBLP
+
+
+- IMHO there's a inverse relationship between the technical soundness of the aggregation approach and ease of communcating to non-technical audiences.
 
 --
 
-$$\mbox{Status Impact} \equiv (\mbox{Scale Score}_{2019} - \mbox{Scale Score}_{2021} | \mbox{Percentile Rank})$$
+- Data as flashlight instead of a hammer (accountability)
 
 --
 
-- We created a custom graphic class in R to help illustrate this
-
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Status_5_Mathematics.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Status_5_Mathematics_Difference.pdf")
-```
-
----
-
-# Growth based analyses of academic impact
-
---
-
-- Indiana uses Student Growth Percentiles (SGPs) as its growth model
-
---
-
-- SGPs used by Indiana are norm-referenced with new growth norms created each year
-
---
-
-- To investigate academic impact, historical growth norms (i.e., coefficient matrices) were calculated:
-
---
-
-    - ILEARN coefficient matrices utilized 2016, 2017 and 2019 to accomodate skip-year growth
-    - WIDA-ACCESS coefficient matrices utilized 2018 and 2019.
-
---
-
-- Historical median/mean SGPs by grade and content area in 2019 will be 50
-
---
-
-- The extent to which median/mean SGPs in 2021 deviate below 50 is indicative of deceleration (i.e., slow down in student learning)
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Growth_5_Mathematics.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Growth_5_Mathematics_Difference.pdf")
-```
-
----
-
-# Categorization of Impact
-
---
-
-- __Severe:__ $\mbox{Growth Impact} \leq -25$ or $\mbox{Status Impact} \leq -0.4$.
-- __Large:__ $-25 < \mbox{Growth Impact} \leq -15$ or $-0.4 < \mbox{Status Impact} \leq -0.25$.
-- __Moderate:__ $-15 < \mbox{Growth Impact} \leq -5$ or $-0.25 < \mbox{Status Impact} \leq -0.1$.
-- __Modest to None:__ $-5 < \mbox{Growth Impact} \leq 5$ or $-0.1 < \mbox{Status Impact} \leq 0.05$.
-- __Improvement:__ $\mbox{Growth Impact} > 5$ or $\mbox{Status Impact} > 0.05$.
-
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_ELA_Grade_5.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_ELA_Grade_6.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_ELA_Grade_7.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_ELA_Grade_8.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Mathematics_Grade_8.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Mathematics_Grade_8.pdf")
-```
-
----
-# Summarization of Academic Impact Across Content Area and Grade
-
---
-
-- The vast amounts of data makes it difficult for users to grasp who and to what extent academic impact is occurring
-
---
-
-- We created another graphic class in R to help summarize this vast amount of data across content area and subgropup
-
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Overview_Overall_Hybrid.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Overview_Quintile_1_Hybrid.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Overview_Quintile_2_Hybrid.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/WIDA_ACCESS/Academic_Impact_Overview_Overall_Hybrid.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/WIDA_ACCESS/Academic_Impact_Overview_Quintile_1_Hybrid.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/WIDA_ACCESS/Academic_Impact_Overview_Quintile_2_Hybrid.pdf")
-```
-
----
-
-
-# Across state views of academic impact
-
-- The Center for Assessment worked with about a dozen states on understand pandemic related academic impact
-
---
-
-- Applying the same set of analyses to all states allows us to help individual states see their impact and impact on student subgroups against other states.
-
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Overview_Overall_COMPILATION_Indiana_Hybrid_ALL_STUDENTS_ANONYMIZED.pdf")
-```
-
----
-class: center, middle
-
-```{r echo=FALSE}
-magick::image_read_pdf("Figures/Academic_Impact_Overview_Quintile_1_COMPILATION_Indiana_Hybrid_ALL_STUDENTS_ANONYMIZED.pdf")
-```
-
----
-
-# Summary
-
---
-
-- Data from 2021 Indiana state assessments was successfully marshaled to investigate COVID-19 related academic impact
-
---
-
-- No evidence of test invaldity was detected to undermine the analyses
-
---
-
-- Academic impact results were summarized across grade, content area, demographic, academic subgroups and districts to help stakeholders in Indiana identify who and to what extent students were academically impact by the pandemic
-
-- Data from 2022 Indiana state assessments will be used in the coming months to investigate whether and the extent to which students are recovering academically from the pandemic related losses.
+- Would this technique be amenable to any data. For example student scaled scores? (as a substitute for percent proficient)
