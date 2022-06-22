@@ -50,21 +50,21 @@ xaringanExtra::use_clipboard()
 ---
 class: inverse, center, middle
 
-# R
+# Section Header
 
 ---
 class: highlight-last-item
 
-# GitHub
+# Some Bullets
 
 --
 
-- GitHub is a code hosting platform for version control and collaboration
+- Bullet 1
 
 --
 
-- Collaboration without coordination
+- Bullet 2
 
 --
 
-- Often used for software development but is incredibly useful for data analytics
+- Bullet 3
