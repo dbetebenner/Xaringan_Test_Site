@@ -47,6 +47,7 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_clipboard()
 ```
 
+---
 class: inverse, center, middle
 
 # R
