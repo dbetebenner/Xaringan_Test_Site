@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="author" content="Damian Betebenner" />
     <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/cfa-b-fonts.css" rel="stylesheet" />
+    <link href="libs/remark-css/cfa-b.css" rel="stylesheet" />
     <script src="libs/clipboard/clipboard.min.js"></script>
     <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
     <script src="libs/shareon/shareon.min.js"></script>
@@ -17,10 +17,56 @@
     <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
     <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link rel="icon" type="image/png" href="https://centerforassessment.github.io/assets/favicon.png" sizes="16x16">
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+
+
+    <style>.shareagain-bar {
+    --shareagain-foreground: #FFFFFF;
+    --shareagain-background: #29a829;
+    --shareagain-facebook: none;
+    --shareagain-linkedin: none;
+    --shareagain-pinterest: none;
+    --shareagain-pocket: none;
+    --shareagain-reddit: none;
+    }</style>
+    <div>
+    <style type="text/css"></style>
+    <script>(function () {
+      let tries = 0
+      function addLogo () {
+        if (typeof slideshow === 'undefined') {
+          tries += 1
+          if (tries < 10) {
+            setTimeout(addLogo, 100)
+          }
+        } else {
+          document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+            .forEach(function (slide) {
+              const logo = document.createElement('a')
+              logo.classList = 'xaringan-extra-logo'
+              logo.href = 'https://www.nciea.org'
+              slide.appendChild(logo)
+            })
+        }
+      }
+      document.addEventListener('DOMContentLoaded', addLogo)
+    })()</script>
+    </div>
   </head>
   <body>
     <textarea id="source">
-class: center, middle, my-title, title-slide
+class: center, middle, inverse, title-slide
 
 .title[
 # Test Presentation Title
@@ -39,7 +85,6 @@ class: center, middle, my-title, title-slide
 ]
 
 ---
-
 
 
 
@@ -122,6 +167,7 @@ class: highlight-last-item
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
+"ratio": "16:9",
 "highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false

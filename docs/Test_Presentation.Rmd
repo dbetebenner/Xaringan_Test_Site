@@ -5,16 +5,14 @@ author: "Damian Betebenner"
 institute: "Center for Assessment"
 date: "June 22nd, 2022 (updated: `r toOrdinal::toOrdinalDate(Sys.Date())`)"
 output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      titleSlideClass: ["center", "middle", "my-title"]
+  cfaDocs::cfaXaringan:
+    cfa_theme: 'cfa-b'
+    include: !expr list(
+      xaringanExtra = 'default',
+      xExtra_use = c('share_again', 'tile_view', 'clipboard'))
+
 
 ---
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
