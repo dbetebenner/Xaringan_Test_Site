@@ -1,0 +1,76 @@
+---
+title: "Test Presentation Title"
+subtitle: "Test Presentations Subtitle"
+author: "Damian Betebenner"
+institute: "Center for Assessment"
+date: "June 22nd, 2022 (updated: `r toOrdinal::toOrdinalDate(Sys.Date())`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      titleSlideClass: ["center", "middle", "my-title"]
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r share-again, echo=FALSE}
+xaringanExtra::use_share_again()
+```
+
+```{r style-share-again, echo=FALSE}
+xaringanExtra::style_share_again(
+  share_buttons = c("twitter"),
+  background = "#009C49",
+  foreground = "#FFFFFF"
+)
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(
+  image_url = "https://centerforassessment.github.io/assets/favicon.png",
+  width = "55px",
+  height = "64px",
+  position = xaringanExtra::css_position(top = "0.5em", right = "0.5em"),
+  link_url = "https://www.nciea.org"
+)
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+xaringanExtra::use_clipboard()
+```
+
+---
+class: inverse, center, middle
+
+# R
+
+---
+class: highlight-last-item
+
+# GitHub
+
+--
+
+- GitHub is a code hosting platform for version control and collaboration
+
+--
+
+- Collaboration without coordination
+
+--
+
+- Often used for software development but is incredibly useful for data analytics
+
+--
+
+- <hr/>
