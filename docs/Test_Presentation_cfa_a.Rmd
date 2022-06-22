@@ -6,11 +6,13 @@ institute: "Center for Assessment"
 date: "June 22nd, 2022 (updated: `r toOrdinal::toOrdinalDate(Sys.Date())`)"
 output:
   cfaDocs::cfaXaringan:
-    cfa_theme: 'cfa-a'
+    cfa_theme: null
+    theme_copy: false
+    css: ['**/cfa-a.css', '**/cfa-b-fonts.css']
     include: !expr list(
+      footer = 'default',
       xaringanExtra = 'default',
       xExtra_use = c('share_again', 'tile_view', 'clipboard'))
-
 
 ---
 ```{r setup, include=FALSE}
