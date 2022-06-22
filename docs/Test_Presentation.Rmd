@@ -47,7 +47,6 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_clipboard()
 ```
 
----
 class: inverse, center, middle
 
 # R
@@ -68,7 +67,3 @@ class: highlight-last-item
 --
 
 - Often used for software development but is incredibly useful for data analytics
-
---
-
-- <hr/>
